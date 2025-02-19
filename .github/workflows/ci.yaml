@@ -1,5 +1,3 @@
-#generate github actions workflow file
-
 name: CI
 
 on:
@@ -12,14 +10,16 @@ jobs:
   build1:
     runs-on: ubuntu-latest
 
-    steps:      
+    steps:
       - uses: actions/checkout@v3
-      - name: install dependencies
-        run: 
-          sudo apt-get update
-          sudo apt-get install python3
-          pip install streamlit
-      - name: run tests
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'  # Specify the Python version you want
+      - name: Install dependencies
         run: |
-          pytest test.py   
-
+          python -m pip install --upgrade pip
+          pip install streamlit pytest
+      - name: Run tests
+        run: |
+          pytest test.py
