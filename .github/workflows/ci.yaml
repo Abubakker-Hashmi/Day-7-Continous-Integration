@@ -22,4 +22,4 @@ jobs:
           pip install streamlit pytest
       - name: Run tests
         run: |
-          pytest D:\MLOps\Day-7-Continous-Integration\.github\workflows\test.py
+          pytest "D:\MLOps\Day-7-Continous-Integration\.github\workflows\test.py"
