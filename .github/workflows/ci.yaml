@@ -1,0 +1,23 @@
+#generate github actions workflow file
+
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build1:
+    runs-on: ubuntu-latest
+
+    steps:      
+      - uses: actions/checkout@v3
+      - name: install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: run tests
+        run: |
+          pytest test.py   
+
