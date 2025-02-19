@@ -20,7 +20,7 @@ def test_cube():
     assert cube(3) == 27, "cube of 3 is 27"
 
 def test_fifth_power():
-    assert fifth_power(2) == 16, "fifth power of 2 is 16"
+    assert fifth_power(2) == 32, "fifth power of 2 is 16"
     assert fifth_power(3) == 243, "fifth power of 3 is 243"
 
 
